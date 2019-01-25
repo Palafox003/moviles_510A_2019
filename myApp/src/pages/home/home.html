@@ -20,16 +20,12 @@
   <div>Tu super heroe es:</div>
 
   <h2>My Heroes</h2>
-  <ul class="heroes">
-    <li *ngFor="let hero of heroes"
-      [class.selected]="hero === selectedHero"
-      (click)="onSelect(hero)">
-      <span class="badge">{{hero.id}}</span> {{hero.name}}
+
+  <ul class="posts">
+    <li *ngFor="let post of posts">
+        <span class="badge">{{post.id}}</span> {{post.title}}
     </li>
   </ul>
-
-  <app-hero-detail [hero]="selectedHero"></app-hero-detail>
-
 
   <button ion-button full (click)="vibrar()">Palafox</button>
 </ion-content>
