@@ -24,3 +24,5 @@ Route::get('user/{nombre?}', function ($nombre="Por favor inserta tu nombre") {
 });
 //------------------------------------------
 Route::get('libros','librosController@index');
+//--------------------------------------------
+Route::resource('carreras','CarrerasController');
