@@ -12,6 +12,7 @@
 			<th>ID</th>
 			<th>CARRERA</th>
 			<th>LOGO</th>
+			<th>EDITAR</th>
 			<th>ELIMINAR</th>
 		</tr>
 @foreach($carreras as $carrera)
@@ -20,6 +21,7 @@
 			<td>{{$carrera->numero}}</td>
 			<td>{{$carrera->nombre}}</td>
 			<td>{{$carrera->logo}}</td>
+			<td><a class="btn btn-primary" href="/carreras/{{$carrera->id}}/edit" role="button">Editar</a></td>
 			<td>
 				<form method="post" action="/carreras/{{$carrera->id}}">
 					<input type="hidden" name="_token" value="{{csrf_token()}}">

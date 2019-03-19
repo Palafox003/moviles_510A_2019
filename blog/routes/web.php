@@ -26,3 +26,11 @@ Route::get('user/{nombre?}', function ($nombre="Por favor inserta tu nombre") {
 Route::get('libros','librosController@index');
 //--------------------------------------------
 Route::resource('carreras','CarrerasController');
+	Route::get('m.carreras','CarrerasController@m_index');
+Route::resource('libros','librosController');
+Route::resource('users','UsersController')->middleware('auth');
+Route::resource('direcciones','DireccionsController');
+Route::get('nuevaDireccion/{user_id}','DireccionsController@guardarDireccion');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

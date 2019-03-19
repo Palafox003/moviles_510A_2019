@@ -1,0 +1,2 @@
+alias: myapp
+pass: 123456

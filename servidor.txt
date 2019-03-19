@@ -1,0 +1,3 @@
+base de datos:sicatico_biblioteca
+usuario:sicatico_admin
+password:h&tn8aHnTb#o

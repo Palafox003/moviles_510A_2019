@@ -3,7 +3,7 @@
 @section('titulo','Nueva Carrera')
 
 @section('contenido')
-<form method="post" action="/carreras">
+<form method="post" action="/carreras" enctype="multipart/form-data">
 	<input type="hidden" name="_token" value="{{csrf_token()}}">
   <div class="form-group">
     <label for="numero">Número:</label>
@@ -16,7 +16,7 @@
   </div>
   <div class="form-group">
     <label for="logo">Logo:</label>
-    <input type="text" class="form-control" name="logo" id="logo">
+    <input type="file" class="form-control" name="logo" id="logo">
   </div>
   
   <button type="submit" class="btn btn-primary">Guardar</button>

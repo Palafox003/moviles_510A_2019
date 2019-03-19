@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Carrera;
+use App\Libro;
 
 class librosController extends Controller
 {
@@ -14,7 +16,8 @@ class librosController extends Controller
     public function index()
     {
         //
-        return view('libros.libros');
+        $libros=Libro::all();
+        return view('libros.libros',['libros'=>$libros]);
     }
 
     /**
@@ -25,6 +28,9 @@ class librosController extends Controller
     public function create()
     {
         //
+        $carreras=Carrera::all();
+
+        return view('libros.nuevoLibro',['carreras'=>$carreras]);
     }
 
     /**
@@ -36,6 +42,9 @@ class librosController extends Controller
     public function store(Request $request)
     {
         //
+        Libro::create($request->all());
+
+        return "Datos guardados.";
     }
 
     /**

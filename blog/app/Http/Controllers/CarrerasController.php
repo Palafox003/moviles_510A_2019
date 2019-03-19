@@ -20,6 +20,12 @@ class CarrerasController extends Controller
         return view('carreras.carreras',['carreras'=>$carreras]);
     }
 
+    public function m_index(){
+        $carreras=Carrera::all();
+
+        return $carreras;
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -41,7 +47,9 @@ class CarrerasController extends Controller
     {
         //
         Carrera::create($request->all());
-        return $request;
+        $path = $request->file('logo')->store('logos');
+
+        return $path;
     }
 
     /**
@@ -64,6 +72,9 @@ class CarrerasController extends Controller
     public function edit($id)
     {
         //
+        $carrera=Carrera::find($id);
+
+        return view('carreras.editarCarrera',['carrera'=>$carrera]);
     }
 
     /**
@@ -76,6 +87,14 @@ class CarrerasController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $carrera=Carrera::find($id);
+
+            $carrera->numero=$request->numero;
+            $carrera->nombre=$request->nombre;
+            $carrera->logo=$request->logo;
+            $carrera->save();
+
+            return redirect('/carreras');
     }
 
     /**
