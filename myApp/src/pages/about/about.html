@@ -7,6 +7,21 @@
 </ion-header>
 
 <ion-content padding>
+
+    <ion-list>
+
+        <ion-item>
+          <ion-input [(ngModel)]="post.numero" name="numero" placeholder="numero"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="text" [(ngModel)]="post.nombre"  placeholder="nombre"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-input type="text" [(ngModel)]="post.logo" placeholder="logo"></ion-input>
+        </ion-item>
+      
+      </ion-list>
  
-<button ion-button large (click)="geo()">Geolocalización</button>
+<button ion-button large (click)="add(post)" >Guardad</button>
 </ion-content>

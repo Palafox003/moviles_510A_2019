@@ -27,6 +27,7 @@ Route::get('libros','librosController@index');
 //--------------------------------------------
 Route::resource('carreras','CarrerasController');
 	Route::get('m.carreras','CarrerasController@m_index');
+	Route::post('mc.carreras','CarrerasController@mc_create');
 Route::resource('libros','librosController');
 Route::resource('users','UsersController')->middleware('auth');
 Route::resource('direcciones','DireccionsController');

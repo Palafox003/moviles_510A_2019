@@ -25,6 +25,11 @@ class CarrerasController extends Controller
 
         return $carreras;
     }
+    public function mc_create(){
+        
+
+        return "Hola";
+    }
 
     /**
      * Show the form for creating a new resource.
